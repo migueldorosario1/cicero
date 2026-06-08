@@ -8,19 +8,19 @@ const queuePath = path.join(repo, 'tools', 'cicero_hourly_queue.json');
 const statePath = path.join(repo, 'tools', 'cicero_hourly_state.json');
 const logPath = path.join(repo, 'logs', 'cicero_publication_audit.jsonl');
 const reportPath = path.join(repo, 'logs', 'cicero_relatorio_bloqueios.md');
-const brainPath = path.join(repo, '..', 'CEREBRO_INDEX_RIOCARTA.md');
+const brainPath = path.join(repo, '..', 'CEREBRO_INDEX_CICERO.md');
 const blogDir = path.join(repo, 'src', 'content', 'blog');
 const publicDir = path.join(repo, 'public');
 const pausePath = path.join(repo, 'tools', 'cicero_publish_paused.txt');
 
 const args = new Set(process.argv.slice(2));
 const envPath = path.join(repo, '..', 'root', 'chaves_cicero.env');
-const forcedBatchSize = process.env.RIOCARTA_BATCH_SIZE ? Number(process.env.RIOCARTA_BATCH_SIZE) : null;
-const forcedMaxAuditAttempts = process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS ? Number(process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) : null;
-const forcedMaxBatchSize = process.env.RIOCARTA_MAX_BATCH_SIZE ? Number(process.env.RIOCARTA_MAX_BATCH_SIZE) : null;
+const forcedBatchSize = (process.env.CICERO_BATCH_SIZE || process.env.RIOCARTA_BATCH_SIZE) ? Number(process.env.CICERO_BATCH_SIZE || process.env.RIOCARTA_BATCH_SIZE) : null;
+const forcedMaxAuditAttempts = (process.env.CICERO_MAX_AUDIT_ATTEMPTS || process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) ? Number(process.env.CICERO_MAX_AUDIT_ATTEMPTS || process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) : null;
+const forcedMaxBatchSize = (process.env.CICERO_MAX_BATCH_SIZE || process.env.RIOCARTA_MAX_BATCH_SIZE) ? Number(process.env.CICERO_MAX_BATCH_SIZE || process.env.RIOCARTA_MAX_BATCH_SIZE) : null;
 const defaultBatchSize = 10;
 const auditCurrentOnly = args.has('--audit-current');
-const reAuditVisible = auditCurrentOnly || args.has('--reaudit-visible') || process.env.RIOCARTA_REAUDIT_VISIBLE === '1';
+const reAuditVisible = auditCurrentOnly || args.has('--reaudit-visible') || process.env.CICERO_REAUDIT_VISIBLE === '1' || process.env.RIOCARTA_REAUDIT_VISIBLE === '1';
 const commitAndPush = args.has('--commit') && !auditCurrentOnly;
 const skipGitPush = args.has('--no-push');
 const deployVercel = args.has('--vercel-deploy');
@@ -858,7 +858,7 @@ if (commitAndPush) {
     }
     if (publishSet.length) {
       execFileSync(
-        process.env.RIOCARTA_PYTHON || 'python3',
+        process.env.CICERO_PYTHON || process.env.RIOCARTA_PYTHON || 'python3',
         [path.join(repo, '..', 'root', 'cicero_confirm_published.py'), ...publishSet],
         { cwd: repo, stdio: 'inherit' },
       );
