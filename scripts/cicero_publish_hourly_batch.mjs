@@ -24,7 +24,26 @@ const reAuditVisible = auditCurrentOnly || args.has('--reaudit-visible') || proc
 const commitAndPush = args.has('--commit') && !auditCurrentOnly;
 const skipGitPush = args.has('--no-push');
 const deployVercel = args.has('--vercel-deploy');
-const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+
+let queue = [];
+if (fs.existsSync(queuePath)) {
+  try {
+    queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
+  } catch (e) {
+    console.warn(`Aviso: Erro ao ler fila em ${queuePath}, usando fallback de globbing:`, e.message);
+  }
+}
+if (!Array.isArray(queue) || queue.length === 0) {
+  console.log(`Fila vazia ou ausente. Fazendo varredura (glob fallback) em ${blogDir}...`);
+  try {
+    const files = fs.readdirSync(blogDir);
+    queue = files.filter(file => file.endsWith('.md'));
+    queue.sort();
+  } catch (err) {
+    console.error(`Erro ao fazer varredura em ${blogDir}:`, err.message);
+  }
+}
+
 let state = fs.existsSync(statePath)
   ? JSON.parse(fs.readFileSync(statePath, 'utf8'))
   : { nextBatchSize: defaultBatchSize, round: 1 };
@@ -701,6 +720,7 @@ async function auditAndFix(file, publish) {
 
 const visible = [];
 const hidden = [];
+const existingQueue = [];
 for (const file of queue) {
   const fullPath = path.join(blogDir, file);
   if (!fs.existsSync(fullPath)) {
@@ -713,9 +733,16 @@ for (const file of queue) {
     })}\n`);
     continue;
   }
+  existingQueue.push(file);
   const text = fs.readFileSync(fullPath, 'utf8');
   if (text.match(/^draft:\s*false\s*$/m)) visible.push(file);
   else hidden.push(file);
+}
+
+try {
+  fs.writeFileSync(queuePath, `${JSON.stringify(existingQueue, null, 2)}\n`);
+} catch (err) {
+  console.error(`Erro ao atualizar arquivo da fila ${queuePath}:`, err.message);
 }
 
 const requestedBatchSize = forcedBatchSize || state.nextBatchSize || defaultBatchSize;
