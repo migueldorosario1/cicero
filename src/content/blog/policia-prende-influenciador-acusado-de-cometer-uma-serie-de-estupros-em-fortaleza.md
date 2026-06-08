@@ -1,6 +1,6 @@
 ---
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/wp3520_imagem.jpg-7.png"
-description: "Matéria arquivada do Cícero"
+description: "Matéria arquivada do Ceará Digital"
 title: 'Polícia prende influenciador acusado de cometer uma série de estupros em Fortaleza'
 pubDate: 2024-02-27 09:38:37
 slug: "policia-prende-influenciador-acusado-de-cometer-uma-serie-de-estupros-em-fortaleza"

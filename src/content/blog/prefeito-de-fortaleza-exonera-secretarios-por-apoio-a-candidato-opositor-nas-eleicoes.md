@@ -1,6 +1,6 @@
 ---
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/wp5808_imagem-57.webp"
-description: "Matéria arquivada do Cícero"
+description: "Matéria arquivada do Ceará Digital"
 title: 'Prefeito de Fortaleza exonera secretários por apoio a candidato opositor nas eleições'
 pubDate: 2024-10-20 08:46:47
 slug: "prefeito-de-fortaleza-exonera-secretarios-por-apoio-a-candidato-opositor-nas-eleicoes"

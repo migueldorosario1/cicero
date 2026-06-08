@@ -1,6 +1,6 @@
 ---
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/wp3638_imagem-4.jpg"
-description: "Matéria arquivada do Cícero"
+description: "Matéria arquivada do Ceará Digital"
 title: 'Grave! Camilo Santana descobre arapongagem de Bolsonaro no MEC'
 pubDate: 2024-03-04 12:46:07
 slug: "grave-camilo-santana-descobre-arapongagem-de-bolsonaro-no-mec"

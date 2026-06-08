@@ -9,13 +9,13 @@ import { sortPostsWithSticky } from '../../utils/stickyPosts';
 const MACRO_LABELS: Record<string, { titulo: string; subtitulo: string; cor: string; icon: string }> = {
 	geral: {
 		titulo: 'Geral',
-		subtitulo: 'Notícias gerais do Rio',
+		subtitulo: 'Notícias gerais do Ceará',
 		cor: 'linear-gradient(135deg, #0052D4, #4364F7)',
 		icon: '📰',
 	},
 	politica: {
 		titulo: 'Política',
-		subtitulo: 'Política e poder no estado do Rio',
+		subtitulo: 'Política e poder no estado do Ceará',
 		cor: 'linear-gradient(135deg, #141e30, #d32f2f)',
 		icon: '🏛️',
 	},
@@ -27,13 +27,13 @@ const MACRO_LABELS: Record<string, { titulo: string; subtitulo: string; cor: str
 	},
 	seguranca: {
 		titulo: 'Segurança',
-		subtitulo: 'Polícia, defesa e segurança pública no Rio',
+		subtitulo: 'Polícia, defesa e segurança pública no Ceará',
 		cor: 'linear-gradient(135deg, #232526, #414345)',
 		icon: '🚓',
 	},
 	lazer: {
 		titulo: 'Lazer',
-		subtitulo: 'Cultura, esporte, gastronomia e vida no Rio',
+		subtitulo: 'Cultura, esporte, gastronomia e vida no Ceará',
 		cor: 'linear-gradient(135deg, #ff5f6d, #ffc371)',
 		icon: '🎉',
 	},
@@ -67,7 +67,7 @@ const sortedPosts = sortPostsWithSticky(filteredPosts);
 <!doctype html>
 <html lang="pt-br">
 	<head>
-		<BaseHead title={`${meta.titulo} - Cícero`} description={meta.subtitulo} />
+		<BaseHead title={`${meta.titulo} - Ceará Digital`} description={meta.subtitulo} />
 		<style define:vars={{ accentColor: meta.cor }}>
 			main {
 				width: 960px;

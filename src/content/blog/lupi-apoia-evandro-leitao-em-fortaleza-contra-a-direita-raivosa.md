@@ -1,6 +1,6 @@
 ---
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/wp5728_imagem-30.webp"
-description: "Matéria arquivada do Cícero"
+description: "Matéria arquivada do Ceará Digital"
 title: 'Lupi apoia Evandro Leitão em Fortaleza contra a direita raivosa'
 pubDate: 2024-10-17 19:47:10
 slug: "lupi-apoia-evandro-leitao-em-fortaleza-contra-a-direita-raivosa"
