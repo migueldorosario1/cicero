@@ -617,6 +617,7 @@ async function auditAndFix(file, publish) {
   const heroImage = getField(frontmatter, 'heroImage');
   const description = getField(frontmatter, 'description');
   const tags = getField(frontmatter, 'tags');
+  const parsedTags = parseTags(frontmatter);
   const isRemoteHero = heroImage && (heroImage.startsWith('http://') || heroImage.startsWith('https://'));
   const heroPath = (!heroImage || isRemoteHero) ? null : path.join(publicDir, heroImage.replace(/^\//, ''));
   const warnings = [];
@@ -624,7 +625,20 @@ async function auditAndFix(file, publish) {
   if (!title || title.length < 20) warnings.push('titulo fraco ou ausente');
   if (title.length > 125) warnings.push('titulo longo');
   if (!description || description.length < 80) warnings.push('descricao curta');
-  if (!tags.includes('rio-de-janeiro') && !tags.includes('niteroi') && !tags.includes('baixada-cearense')) {
+
+  const ceTerritorialSlugs = new Set([
+    'fortaleza', 'caucaia', 'maracanau', 'eusebio', 'aquiraz', 'maranguape', 'pacatuba', 'horizonte', 'cascavel',
+    'cariri', 'juazeiro-do-norte', 'crato', 'barbalha', 'brejo-santo', 'missao-velha', 'milagres', 'mauriti', 'jardim',
+    'sertao-de-sobral', 'sobral', 'tiangua', 'camocim', 'acarau', 'itapipoca', 'granja', 'vicosa-do-ceara', 'ubajara',
+    'sertao-central', 'quixada', 'quixeramobim', 'caninde', 'crateus', 'taua', 'senador-pompeu',
+    'litoral-leste-jaguaribe', 'aracati', 'russas', 'limoeiro-do-norte', 'morada-nova', 'jaguaribe', 'beberibe',
+    'regiao-metropolitana-de-fortaleza', 'fortaleza-centro', 'centro-fortaleza', 'fortaleza-leste', 'aldeota', 'meireles',
+    'mucuripe', 'coco', 'praia-de-iracema', 'fortaleza-oeste', 'barra-do-ceara', 'jacarecanga', 'carlito-pamplona',
+    'fortaleza-sul', 'parangaba', 'maraponga', 'mondubim', 'fortaleza-sudeste', 'messejana', 'jose-walter', 'jangurussu',
+    'ceara', 'ceara-digital'
+  ]);
+  const hasTerritorial = parsedTags.some((tag) => ceTerritorialSlugs.has(tag));
+  if (!hasTerritorial) {
     warnings.push('categoria territorial fraca');
   }
   let imageSize = 'remote';

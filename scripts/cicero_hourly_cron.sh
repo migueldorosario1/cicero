@@ -22,8 +22,8 @@ fi
 
 {
   printf '\n[%s] Cícero hourly publish start\n' "$(date -Is)"
-  "$RIOCARTA_PYTHON" scripts/cicero_zelador_destaques.py
-  "$RIOCARTA_PYTHON" "../root/cicero_smoke_markdown.py" 15 --queue
-  "$RIOCARTA_NPM" run cicero:publish-hourly
+  "${CICERO_PYTHON:-$RIOCARTA_PYTHON}" scripts/cicero_zelador_destaques.py
+  "${CICERO_PYTHON:-$RIOCARTA_PYTHON}" "../root/cicero_smoke_markdown.py" 15 --queue
+  "${CICERO_NPM:-$RIOCARTA_NPM}" run cicero:publish-hourly
   printf '[%s] Cícero hourly publish done\n' "$(date -Is)"
 } >> logs/cicero_hourly_cron.log 2>&1
