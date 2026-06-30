@@ -1,16 +1,16 @@
 {
   "schemaVersion": "v1",
-  "source": "TSE / TRE-CE 2022; Acompanhamento institucional do Governo do Estado do Ceará",
-  "criterio": "Governador eleito em 2022 no primeiro turno com a maioria absoluta dos votos válidos.",
+  "source": "Governo do Estado do Ceará; Agencia Brasil; acompanhamento institucional em 2026",
+  "criterio": "Governador atual em exercicio; sem votos diretos porque assumiu o mandato-tampao por sucessao institucional.",
   "governador": {
-    "nome": "Elmano de Freitas",
-    "slug": "elmano-de-freitas",
-    "governador": "Elmano de Freitas da Costa",
-    "partido": "PT",
-    "votos": 2808300,
-    "totalVotosEstado": 5198421,
-    "percentualEstado": 54.02,
-    "situacao": "GOVERNADOR ELEITO",
-    "observacao": "Eleito em primeiro turno na eleição de 2022."
+    "nome": "Ricardo Couto de Castro",
+    "slug": "ricardo-couto-de-castro",
+    "governador": "Ricardo Couto de Castro",
+    "partido": "Sem partido",
+    "votos": 0,
+    "totalVotosEstado": 0,
+    "percentualEstado": 0,
+    "situacao": "GOVERNADOR EM EXERCÍCIO",
+    "observacao": "Assumiu em 2026 sem votação direta para o mandato-tampão."
   }
 }

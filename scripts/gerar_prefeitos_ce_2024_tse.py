@@ -25,14 +25,28 @@ from typing import Any
 
 
 TSE_ZIP_URL = "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2024.zip"
-CSV_NAME = "votacao_candidato_munzona_2024_CE.csv"
+CSV_NAME = "votacao_candidato_munzona_2024_CE.zip"
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 OUTPUT_CSV = PROJECT_ROOT / "src" / "data" / "prefeitos_eleitos_ce_2024.csv"
 OUTPUT_JSON = PROJECT_ROOT / "src" / "data" / "prefeitos_eleitos_ce_2024.json"
 
 SITUACOES_ELEITO = {"ELEITO", "ELEITO POR QP", "ELEITO POR MÉDIA", "ELEITO POR MEDIA"}
-CASOS_SEM_ELEICAO_VALIDADA = []
+CASOS_SEM_ELEICAO_VALIDADA = [
+    {
+        "municipio": "Itaguaí",
+        "municipio_slug": "itaguai",
+        "turno": None,
+        "prefeito": "Haroldo Rodrigues Jesus Neto",
+        "nome_urna": "Haroldo Jesus",
+        "partido": "PDT",
+        "numero": "",
+        "situacao": "PREFEITO INTERINO; eleição municipal sem eleito validado no TSE",
+        "votos": 0,
+        "total_votos_municipio": 0,
+        "percentual_municipio": 0,
+    }
+]
 
 
 def slugify(text: str) -> str:

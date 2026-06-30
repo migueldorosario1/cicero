@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source "/home/migueldorosario/Downloads/Antigravity Google/Cícero Agentes/root/cicero_cron_env.sh"
-cd "/home/migueldorosario/Downloads/Antigravity Google/Cícero Agentes/cicero"
+source "/home/migueldorosario/Downloads/Antigravity Google/Cicero Agentes/root/cicero_cron_env.sh"
+cd "/home/migueldorosario/Downloads/Antigravity Google/Cicero Agentes/cicero"
 
 if [[ -f tools/cicero_publish_paused.txt ]]; then
   pause_reason="$(head -c 240 tools/cicero_publish_paused.txt | tr '\n' ' ')"
@@ -22,8 +22,8 @@ fi
 
 {
   printf '\n[%s] Cícero hourly publish start\n' "$(date -Is)"
-  "${CICERO_PYTHON:-$RIOCARTA_PYTHON}" scripts/cicero_zelador_destaques.py
-  "${CICERO_PYTHON:-$RIOCARTA_PYTHON}" "../root/cicero_smoke_markdown.py" 15 --queue
-  "${CICERO_NPM:-$RIOCARTA_NPM}" run cicero:publish-hourly
+  "$RIOCARTA_PYTHON" scripts/cicero_zelador_destaques.py
+  "$RIOCARTA_PYTHON" "../root/cicero_smoke_markdown.py" 15 --queue
+  "$RIOCARTA_NPM" run cicero:publish-hourly
   printf '[%s] Cícero hourly publish done\n' "$(date -Is)"
 } >> logs/cicero_hourly_cron.log 2>&1

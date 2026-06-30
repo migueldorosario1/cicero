@@ -8,42 +8,23 @@ const queuePath = path.join(repo, 'tools', 'cicero_hourly_queue.json');
 const statePath = path.join(repo, 'tools', 'cicero_hourly_state.json');
 const logPath = path.join(repo, 'logs', 'cicero_publication_audit.jsonl');
 const reportPath = path.join(repo, 'logs', 'cicero_relatorio_bloqueios.md');
-const brainPath = path.join(repo, '..', 'CEREBRO_INDEX_CICERO.md');
+const brainPath = path.join(repo, '..', 'CEREBRO_INDEX_RIOCARTA.md');
 const blogDir = path.join(repo, 'src', 'content', 'blog');
 const publicDir = path.join(repo, 'public');
 const pausePath = path.join(repo, 'tools', 'cicero_publish_paused.txt');
 
 const args = new Set(process.argv.slice(2));
 const envPath = path.join(repo, '..', 'root', 'chaves_cicero.env');
-const forcedBatchSize = (process.env.CICERO_BATCH_SIZE || process.env.RIOCARTA_BATCH_SIZE) ? Number(process.env.CICERO_BATCH_SIZE || process.env.RIOCARTA_BATCH_SIZE) : null;
-const forcedMaxAuditAttempts = (process.env.CICERO_MAX_AUDIT_ATTEMPTS || process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) ? Number(process.env.CICERO_MAX_AUDIT_ATTEMPTS || process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) : null;
-const forcedMaxBatchSize = (process.env.CICERO_MAX_BATCH_SIZE || process.env.RIOCARTA_MAX_BATCH_SIZE) ? Number(process.env.CICERO_MAX_BATCH_SIZE || process.env.RIOCARTA_MAX_BATCH_SIZE) : null;
+const forcedBatchSize = process.env.RIOCARTA_BATCH_SIZE ? Number(process.env.RIOCARTA_BATCH_SIZE) : null;
+const forcedMaxAuditAttempts = process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS ? Number(process.env.RIOCARTA_MAX_AUDIT_ATTEMPTS) : null;
+const forcedMaxBatchSize = process.env.RIOCARTA_MAX_BATCH_SIZE ? Number(process.env.RIOCARTA_MAX_BATCH_SIZE) : null;
 const defaultBatchSize = 10;
 const auditCurrentOnly = args.has('--audit-current');
-const reAuditVisible = auditCurrentOnly || args.has('--reaudit-visible') || process.env.CICERO_REAUDIT_VISIBLE === '1' || process.env.RIOCARTA_REAUDIT_VISIBLE === '1';
+const reAuditVisible = auditCurrentOnly || args.has('--reaudit-visible') || process.env.RIOCARTA_REAUDIT_VISIBLE === '1';
 const commitAndPush = args.has('--commit') && !auditCurrentOnly;
 const skipGitPush = args.has('--no-push');
 const deployVercel = args.has('--vercel-deploy');
-
-let queue = [];
-if (fs.existsSync(queuePath)) {
-  try {
-    queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
-  } catch (e) {
-    console.warn(`Aviso: Erro ao ler fila em ${queuePath}, usando fallback de globbing:`, e.message);
-  }
-}
-if (!Array.isArray(queue) || queue.length === 0) {
-  console.log(`Fila vazia ou ausente. Fazendo varredura (glob fallback) em ${blogDir}...`);
-  try {
-    const files = fs.readdirSync(blogDir);
-    queue = files.filter(file => file.endsWith('.md'));
-    queue.sort();
-  } catch (err) {
-    console.error(`Erro ao fazer varredura em ${blogDir}:`, err.message);
-  }
-}
-
+const queue = JSON.parse(fs.readFileSync(queuePath, 'utf8'));
 let state = fs.existsSync(statePath)
   ? JSON.parse(fs.readFileSync(statePath, 'utf8'))
   : { nextBatchSize: defaultBatchSize, round: 1 };
@@ -636,7 +617,6 @@ async function auditAndFix(file, publish) {
   const heroImage = getField(frontmatter, 'heroImage');
   const description = getField(frontmatter, 'description');
   const tags = getField(frontmatter, 'tags');
-  const parsedTags = parseTags(frontmatter);
   const isRemoteHero = heroImage && (heroImage.startsWith('http://') || heroImage.startsWith('https://'));
   const heroPath = (!heroImage || isRemoteHero) ? null : path.join(publicDir, heroImage.replace(/^\//, ''));
   const warnings = [];
@@ -644,20 +624,7 @@ async function auditAndFix(file, publish) {
   if (!title || title.length < 20) warnings.push('titulo fraco ou ausente');
   if (title.length > 125) warnings.push('titulo longo');
   if (!description || description.length < 80) warnings.push('descricao curta');
-
-  const ceTerritorialSlugs = new Set([
-    'fortaleza', 'caucaia', 'maracanau', 'eusebio', 'aquiraz', 'maranguape', 'pacatuba', 'horizonte', 'cascavel',
-    'cariri', 'juazeiro-do-norte', 'crato', 'barbalha', 'brejo-santo', 'missao-velha', 'milagres', 'mauriti', 'jardim',
-    'sertao-de-sobral', 'sobral', 'tiangua', 'camocim', 'acarau', 'itapipoca', 'granja', 'vicosa-do-ceara', 'ubajara',
-    'sertao-central', 'quixada', 'quixeramobim', 'caninde', 'crateus', 'taua', 'senador-pompeu',
-    'litoral-leste-jaguaribe', 'aracati', 'russas', 'limoeiro-do-norte', 'morada-nova', 'jaguaribe', 'beberibe',
-    'regiao-metropolitana-de-fortaleza', 'fortaleza-centro', 'centro-fortaleza', 'fortaleza-leste', 'aldeota', 'meireles',
-    'mucuripe', 'coco', 'praia-de-iracema', 'fortaleza-oeste', 'barra-do-ceara', 'jacarecanga', 'carlito-pamplona',
-    'fortaleza-sul', 'parangaba', 'maraponga', 'mondubim', 'fortaleza-sudeste', 'messejana', 'jose-walter', 'jangurussu',
-    'ceara', 'ceara-digital'
-  ]);
-  const hasTerritorial = parsedTags.some((tag) => ceTerritorialSlugs.has(tag));
-  if (!hasTerritorial) {
+  if (!tags.includes('rio-de-janeiro') && !tags.includes('niteroi') && !tags.includes('baixada-cearense')) {
     warnings.push('categoria territorial fraca');
   }
   let imageSize = 'remote';
@@ -720,7 +687,6 @@ async function auditAndFix(file, publish) {
 
 const visible = [];
 const hidden = [];
-const existingQueue = [];
 for (const file of queue) {
   const fullPath = path.join(blogDir, file);
   if (!fs.existsSync(fullPath)) {
@@ -733,16 +699,9 @@ for (const file of queue) {
     })}\n`);
     continue;
   }
-  existingQueue.push(file);
   const text = fs.readFileSync(fullPath, 'utf8');
   if (text.match(/^draft:\s*false\s*$/m)) visible.push(file);
   else hidden.push(file);
-}
-
-try {
-  fs.writeFileSync(queuePath, `${JSON.stringify(existingQueue, null, 2)}\n`);
-} catch (err) {
-  console.error(`Erro ao atualizar arquivo da fila ${queuePath}:`, err.message);
 }
 
 const requestedBatchSize = forcedBatchSize || state.nextBatchSize || defaultBatchSize;
@@ -899,7 +858,7 @@ if (commitAndPush) {
     }
     if (publishSet.length) {
       execFileSync(
-        process.env.CICERO_PYTHON || process.env.RIOCARTA_PYTHON || 'python3',
+        process.env.RIOCARTA_PYTHON || 'python3',
         [path.join(repo, '..', 'root', 'cicero_confirm_published.py'), ...publishSet],
         { cwd: repo, stdio: 'inherit' },
       );
