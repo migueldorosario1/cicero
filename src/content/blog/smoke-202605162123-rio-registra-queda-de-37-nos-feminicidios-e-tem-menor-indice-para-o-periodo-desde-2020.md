@@ -2,7 +2,7 @@
 title: "Rio registra queda de 37% nos feminicídios e tem menor índice para o período desde 2020"
 description: "O Governo Rio registrou uma redução nos casos de feminicídio no primeiro trimestre de 2026. Dados do Instituto de Segurança Pública (ISP) mostram que os registros caíram mais de 37"
 pubDate: "2026-05-16T21:24:46Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "seguranca-publica", "capital"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605162123-rio-registra-queda-de-37-nos-feminicidios-e-tem-menor-indice-para-o-periodo-desde-2020.jpg"
 ---

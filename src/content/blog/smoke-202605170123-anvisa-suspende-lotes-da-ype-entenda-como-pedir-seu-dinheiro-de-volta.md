@@ -2,7 +2,7 @@
 title: "Anvisa suspende lotes da Ypê: entenda como pedir seu dinheiro de volta"
 description: "Rio Anvisa suspende lotes da Ypê: entenda como pedir seu dinheiro de volta Consumidores com itens do 'lote final 1' podem solicitar o dinheiro de volta via formulárioA Ypê iniciou"
 pubDate: "2026-05-17T01:25:20Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "saude", "capital-estado", "transporte-mobilidade"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170123-anvisa-suspende-lotes-da-ype-entenda-como-pedir-seu-dinheiro-de-volta.jpg"
 ---

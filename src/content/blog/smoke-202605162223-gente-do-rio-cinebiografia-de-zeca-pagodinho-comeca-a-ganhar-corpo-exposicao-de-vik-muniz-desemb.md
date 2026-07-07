@@ -2,7 +2,7 @@
 title: "GENTE DO RIO – Cinebiografia de Zeca Pagodinho começa a ganhar corpo; exposição de Vik Muniz desembarca no CCBB-Rio & outras novidades"
 description: "“Deixa a vida me levar”, cinebiografia que vai levar para as telas de cinema a história de Zeca Pagodinho, começou a ser filmada no Rio Comprido e na Serrinha nesta primeira quinze"
 pubDate: "2026-05-16T22:24:46Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "samba", "cultura", "cultura-carnaval", "capital", "regiao-metropolitana", "rio-comprido", "copacabana"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605162223-gente-do-rio-cinebiografia-de-zeca-pagodinho-comeca-a-ganhar-corpo-exposicao-de-vik-muniz-desemb.jpg"
 ---
