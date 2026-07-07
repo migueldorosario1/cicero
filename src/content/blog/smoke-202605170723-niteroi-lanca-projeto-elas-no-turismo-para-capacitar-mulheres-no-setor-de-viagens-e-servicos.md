@@ -2,7 +2,7 @@
 title: "Niterói lança projeto “Elas no Turismo” para capacitar mulheres no setor de viagens e serviços"
 description: "A Prefeitura de Niterói lançou, nesta quinta-feira (14), o projeto “Elas no Turismo!”, uma iniciativa desenhada para promover a qualificação profissional e a inclusão social de mul"
 pubDate: "2026-05-17T07:23:15Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "niteroi", "turismo", "empoderamento-feminino", "regiao-metropolitana", "capital", "leme", "seguranca-publica", "transporte-mobilidade", "cultura-carnaval", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170723-niteroi-lanca-projeto-elas-no-turismo-para-capacitar-mulheres-no-setor-de-viagens-e-servicos.jpeg"
 ---
