@@ -2,7 +2,7 @@
 title: "Nova Iguaçu cria Superintendência de Museus e planeja novos espaços culturais"
 description: "Menos de um mês após inaugurar o primeiro Museu de Arqueologia e Etnologia do estado do Rio, a Prefeitura de Nova Iguaçu criou a Superintendência de Museus, vinculada à Secretaria"
 pubDate: "2026-05-17T06:23:23Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "nova-iguacu", "cultura", "museus", "norte-noroeste-cearense", "capital", "regiao-metropolitana", "baixada", "petropolis", "transporte-mobilidade", "educacao", "cultura-carnaval", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170623-nova-iguacu-cria-superintendencia-de-museus-e-planeja-novos-espacos-culturais.jpeg"
 ---

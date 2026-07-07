@@ -2,7 +2,7 @@
 title: "São Gonçalo publica no Diário Oficial do dia 18 a lista de sorteados para centros de autismo"
 description: "Município disponibiliza 150 vagas em duas unidades, no Gradim e no Centro A Secretaria de Educação da Prefeitura de São Gonçalo realizou, nesta sexta-feira (15), o sorteio de vagas"
 pubDate: "2026-05-17T06:23:25Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "sao-goncalo", "educacao", "niteroi-metropolitana", "regiao-metropolitana", "niteroi", "transporte-mobilidade", "saude", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170623-sao-goncalo-publica-no-diario-oficial-do-dia-18-a-lista-de-sorteados-para-centros-de-autismo.jpg"
 ---

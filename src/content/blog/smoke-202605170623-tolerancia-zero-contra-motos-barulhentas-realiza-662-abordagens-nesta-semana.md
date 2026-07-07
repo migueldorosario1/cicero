@@ -2,7 +2,7 @@
 title: "Tolerância Zero contra motos barulhentas realiza 662 abordagens nesta semana"
 description: "Ações aconteceram nos bairros do Mutondo e Alcântara A Operação Tolerância Zero contra motos com escapamentos irregulares, descargas adulteradas e sem placa segue tomando conta das"
 pubDate: "2026-05-17T06:23:30Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "sao-goncalo", "seguranca-publica", "niteroi-metropolitana", "regiao-metropolitana", "niteroi", "transporte-mobilidade", "educacao", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170623-tolerancia-zero-contra-motos-barulhentas-realiza-662-abordagens-nesta-semana.jpg"
 ---

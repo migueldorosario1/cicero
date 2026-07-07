@@ -2,7 +2,7 @@
 title: "Região entra em alerta para risco de tempestades com avanço de frentes frias"
 description: "A partir desta sexta-feira (15), a passagem de frentes frias, áreas de baixa pressão e a circulação de ventos em médios níveis da atmosfera vão provocar uma grande mudança no tempo"
 pubDate: "2026-05-16T21:24:33Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "tempo", "clima", "norte-noroeste-cearense", "regiao-metropolitana", "noroeste-cearense", "transporte-mobilidade"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605162123-regiao-entra-em-alerta-para-risco-de-tempestades-com-avanco-de-frentes-frias.jpg"
 ---

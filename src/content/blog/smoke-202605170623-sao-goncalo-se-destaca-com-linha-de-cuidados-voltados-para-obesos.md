@@ -2,7 +2,7 @@
 title: "São Gonçalo se destaca com linha de cuidados voltados para obesos"
 description: "Município apresenta programa em Congresso Brasileiro de Nutrição A implantação da Linha de Cuidado do Sobrepeso e Obesidade (LCSO) da rede municipal de saúde da Prefeitura de São G"
 pubDate: "2026-05-17T06:23:21Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "sao-goncalo", "saude", "norte-noroeste-cearense", "niteroi-metropolitana", "regiao-metropolitana", "niteroi", "transporte-mobilidade", "educacao", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170623-sao-goncalo-se-destaca-com-linha-de-cuidados-voltados-para-obesos.jpeg"
 ---
