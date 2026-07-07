@@ -2,7 +2,7 @@
 title: "Suspeito de assediar e ameaçar estudantes é preso pela PM em praça de Cabo Frio"
 description: "Um homem foi preso pela Polícia Militar na tarde de quinta-feira (14) suspeito de assediar, ofender e ameaçar estudantes na Praça de São Cristóvão, em Cabo Frio. O caso aconteceu p"
 pubDate: "2026-05-15T21:07:25Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "cabo-frio", "regiao-dos-lagos", "seguranca-publica", "sao-cristovao", "transporte-mobilidade", "saude", "educacao"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605151805-suspeito-de-assediar-e-ameacar-estudantes-e-preso-pela-pm-em-praca-de-cabo-frio.webp"
 categoria_macro: seguranca

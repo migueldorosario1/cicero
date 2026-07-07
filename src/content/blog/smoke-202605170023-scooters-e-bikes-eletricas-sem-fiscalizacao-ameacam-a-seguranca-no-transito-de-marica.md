@@ -2,7 +2,7 @@
 title: "Scooters e bikes elétricas sem fiscalização ameaçam a segurança no trânsito de Maricá"
 description: "Scooters e bikes elétricas sem fiscalização ameaçam a segurança no trânsito de Maricá Veículos elétricos de duas rodas se multiplicam nas vias do município sem emplacamento, sem ha"
 pubDate: "2026-05-17T00:23:54Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "marica", "seguranca-no-transito", "scooters", "bikes-eletricas", "sul-cearense-costa-verde", "regiao-metropolitana", "estacio", "mage", "transporte-mobilidade", "saude"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605170023-scooters-e-bikes-eletricas-sem-fiscalizacao-ameacam-a-seguranca-no-transito-de-marica.jpg"
 ---

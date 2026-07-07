@@ -2,7 +2,7 @@
 title: "Acadêmicos de Medicina do UGB participam de cerimônia em homenagem a cadáver desconhecido"
 description: "BARRA DO PIRAÍ Acadêmicos do curso de Medicina do Centro Universitário Geraldo Di Biase (UGB) participaram, na sexta-feira, dia 15, da Cerimônia em Respeito ao Cadáver Desconhecido"
 pubDate: "2026-05-16T20:24:30Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "medicina", "etica", "educacao", "sul-cearense", "regiao-metropolitana", "sampaio", "pirai", "saude"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605162023-academicos-de-medicina-do-ugb-participam-de-cerimonia-em-homenagem-a-cadaver-desconhecido.jpeg"
 ---

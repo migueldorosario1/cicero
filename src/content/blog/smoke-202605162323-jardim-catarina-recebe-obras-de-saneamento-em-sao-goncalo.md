@@ -2,7 +2,7 @@
 title: "Jardim Catarina recebe obras de saneamento em São Gonçalo"
 description: "Investimentos em redes de água e esgoto devem beneficiar cerca de 100 mil moradores em São Gonçalo O Jardim Catarina, em São Gonçalo, começou a receber um conjunto de obras de sane"
 pubDate: "2026-05-16T23:23:09Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "sao-goncalo", "saneamento", "norte-noroeste-cearense", "niteroi-metropolitana", "regiao-metropolitana", "niteroi", "problemas-estruturais", "transporte-mobilidade"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605162323-jardim-catarina-recebe-obras-de-saneamento-em-sao-goncalo.jpeg"
 ---

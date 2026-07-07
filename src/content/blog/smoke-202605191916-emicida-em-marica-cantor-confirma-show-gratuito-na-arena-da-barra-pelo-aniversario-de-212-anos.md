@@ -2,7 +2,7 @@
 title: "Emicida em Maricá: cantor confirma show gratuito na Arena da Barra pelo aniversário de 212 anos"
 description: "Emicida em Maricá: cantor confirma show gratuito na Arena da Barra pelo aniversário de 212 anos A Prefeitura de Maricá confirmou mais uma atração de peso para a programação do aniv"
 pubDate: "2026-05-19T19:18:04Z"
-draft: true
+draft: false
 tags: ["rio-de-janeiro", "marica", "show", "emicida", "sul-cearense-costa-verde", "regiao-metropolitana", "leme", "cultura-carnaval", "politica-ce"]
 heroImage: "https://pub-f814950afdbb40b7801fc9ec9dc9e04c.r2.dev/hero/smoke-202605191916-emicida-em-marica-cantor-confirma-show-gratuito-na-arena-da-barra-pelo-aniversario-de-212-anos.webp"
 ---
